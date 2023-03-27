@@ -6,8 +6,8 @@ const router = express.Router();
 // Create the routes here
 
 //get all active users
-router.get("/active", async (req, res) => {
-    const allUsers = await prisma.user.findMany({
+router.get("/", async (req, res) => {
+    const activeUsers = await prisma.user.findMany({
         where: {
             isActive: true
         }
@@ -15,7 +15,7 @@ router.get("/active", async (req, res) => {
 
     res.status(200).json({
         success: true,
-        allUsers
+        users: activeUsers
     })
 })
 
@@ -72,7 +72,7 @@ router.delete("/:id", async (req, res) => {
 
 
 //Able to Get all Admin Users
-router.get("/admin", async (req, res) => {
+router.get("/admins", async (req, res) => {
     const allUsers = await prisma.user.findMany({
         where: {
             isAdmin: true
@@ -81,7 +81,7 @@ router.get("/admin", async (req, res) => {
 
     res.status(200).json({
         success: true,
-        allUsers
+        users: allUsers
     })
 })
 
