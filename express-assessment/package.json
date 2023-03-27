@@ -7,7 +7,6 @@
   "scripts": {
     "start": "node main.js",
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
-    
   },
   "keywords": [],
   "author": "",
